@@ -115,6 +115,8 @@ Task("Nuget")
     {
         OutputDirectory = "./artifacts",
         IncludeReferencedProjects = true,
+        Symbols = true,
+        
         Properties = new Dictionary<string, string>
         {
             { "Configuration", "Release" }
