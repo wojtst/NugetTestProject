@@ -133,16 +133,10 @@ Task("Nuget")
 
     foreach(var package in packages)
     {
-        //if(IsNuGetPublished(package))
-        //{
-        //    Information($"Bypassing publishing \"{package}\" as it is already published.");
-        //}
-        //else
-        //{
+
             Information($"Publishing \"{package}\".");
             //CopyFile(package, "D:\\LocalNugetRepository\\" + package.GetFilename());
-            NuGetPush(package, settings);
-        //}
+            NuGetPush(package, settings); 
     } 
 });
 // Task("Run-Unit-Tests")
