@@ -115,8 +115,9 @@ Task("Nuget")
     {
         OutputDirectory = "./artifacts",
         IncludeReferencedProjects = true,
-        Symbols = true,
-        
+        Symbols = false,
+        Verbosity = NuGetVerbosity.Detailed,
+
         Properties = new Dictionary<string, string>
         {
             { "Configuration", "Release" }
@@ -137,8 +138,8 @@ Task("Nuget")
     {
 
             Information($"Publishing \"{package}\".");
-            //CopyFile(package, "D:\\LocalNugetRepository\\" + package.GetFilename());
-            NuGetPush(package, settings); 
+            CopyFile(package, "D:\\LocalNugetRepository\\" + package.GetFilename());
+            //NuGetPush(package, settings); 
     } 
 });
 // Task("Run-Unit-Tests")
