@@ -1,0 +1,8 @@
+/src/.vs/*
+*.pdb
+/src/TestClassLibrary/obj/Debug/*
+/src/TestClassLibrary/obj/Release/*
+/tools/*
+/src/TestClassLibrary/bin/*
+/src/TestClassLibrary/.vs/*
+artifacts/*

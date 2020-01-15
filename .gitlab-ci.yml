@@ -1,0 +1,27 @@
+variables:
+  PROJECT_NAME: "TestNugetProject"
+
+before_script:
+  - echo Continuous Integration for %PROJECT_NAME%
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - powershell -File build.ps1 -target="Build"
+  tags:
+    - nugets
+  artifacts:
+    untracked: true
+
+deploy:
+  stage: deploy
+  script:
+      - powershell -File build.ps1 -target="Nuget"
+  tags:
+      - nugets
+  artifacts:
+    untracked: true
