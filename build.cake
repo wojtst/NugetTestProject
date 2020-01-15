@@ -97,7 +97,7 @@ Action<string> SourceLink = (solutionFileName) =>
     try 
     {
         GitLink("./", new GitLinkSettings() {
-            RepositoryUrl = "https://github.com/wojtst/NugetTestProject.git",
+            RepositoryUrl = "https://github.com/wojtst/NugetTestProject",
             SolutionFileName = solutionFileName,
         });
     }
@@ -138,8 +138,8 @@ Task("Nuget")
     {
 
             Information($"Publishing \"{package}\".");
-            CopyFile(package, "D:\\LocalNugetRepository\\" + package.GetFilename());
-            //NuGetPush(package, settings); 
+            //CopyFile(package, "D:\\LocalNugetRepository\\" + package.GetFilename());
+            NuGetPush(package, settings); 
     } 
 });
 // Task("Run-Unit-Tests")
