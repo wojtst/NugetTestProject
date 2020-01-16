@@ -12,7 +12,7 @@
     <releaseNotes>...</releaseNotes>
   </metadata>
    <files>
-    <file src="bin\Release\TestClassLibrary.dll" target="lib\net452" />
+    <file src="bin\Debug\TestClassLibrary.dll" target="lib\net452" />
     <file src="bin\Debug\TestClassLibrary.pdb" target="lib\net452" />
   </files>
 </package>
