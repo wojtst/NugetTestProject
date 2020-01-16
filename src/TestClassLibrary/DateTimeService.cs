@@ -13,7 +13,8 @@ namespace TestClassLibrary
             DateTime now = DateTime.UtcNow;
 
             now.AddDays(-7);
-
+            NestedClass.dupa();
+            
             return now;
         }
     }
