@@ -61,7 +61,7 @@ Task("Build")
         // Use MSBuild
         MSBuild(solution, settings => settings.SetConfiguration(configuration));
         
-        SourceLink(solution);
+        //SourceLink(solution);
 
     //   GitLink("./src/", new GitLinkSettings {
     //         RepositoryUrl = "http://git.local.graw.com",
@@ -98,6 +98,7 @@ Action<string> SourceLink = (solutionFileName) =>
         GitLink("./", new GitLinkSettings() {
             RepositoryUrl = "https://github.com/wojtst/NugetTestProject",
             SolutionFileName = solutionFileName,
+            Configuration = configuration,
         });
     }
     catch (Exception ex)
