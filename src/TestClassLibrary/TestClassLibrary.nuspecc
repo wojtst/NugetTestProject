@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TestClassLibrary</id>
+    <version>$version$</version>
+    <title>TestClassLibrary</title>
+    <authors>WS</authors>
+    <owners>WS</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>asd</description>
+    <summary>...</summary>
+    <releaseNotes>...</releaseNotes>
+  </metadata>
+</package>
