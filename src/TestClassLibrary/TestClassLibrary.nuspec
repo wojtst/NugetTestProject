@@ -11,4 +11,7 @@
     <summary>...</summary>
     <releaseNotes>...</releaseNotes>
   </metadata>
+  <files>
+    <file src="bin\Release\TestClassLibrary.pdb" target="lib\net46"/>
+  </files>
 </package>
