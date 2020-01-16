@@ -59,8 +59,7 @@ Task("Build")
 
         var solution = System.IO.Path.Combine("./src/", "TestClassLibrary.sln");
         // Use MSBuild
-        MSBuild(solution, settings => settings.SetConfiguration("Debug"));
-        MSBuild(solution, settings => settings.SetConfiguration("Release"));
+        MSBuild(solution, settings => settings.SetConfiguration(configuration));
         
         SourceLink(solution);
 
@@ -120,7 +119,7 @@ Task("Nuget")
 
         Properties = new Dictionary<string, string>
         {
-            { "Configuration", "Debug" }
+            { "Configuration", configuration }
         }
     };
 

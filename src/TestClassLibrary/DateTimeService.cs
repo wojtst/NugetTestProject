@@ -14,7 +14,7 @@ namespace TestClassLibrary
 
             now.AddDays(-7);
             NestedClass.dupa();
-            throw new Exception("ddd");
+            
             return now;
         }
     }
