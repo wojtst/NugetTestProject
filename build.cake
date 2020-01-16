@@ -3,7 +3,7 @@
 #addin nuget:?package=Cake.VersionReader
 #addin nuget:?package=Nuget.Core
 
-#tool "nuget:?package=gitlink&version=2.4.0"
+#tool "nuget:?package=gitlink"
 #tool nuget:?package=GitVersion.CommandLine
 
 using NuGet;
@@ -61,7 +61,7 @@ Task("Build")
         // Use MSBuild
         MSBuild(solution, settings => settings.SetConfiguration(configuration));
         
-        //SourceLink(solution);
+        SourceLink(solution);
 
     //   GitLink("./src/", new GitLinkSettings {
     //         RepositoryUrl = "http://git.local.graw.com",
@@ -95,10 +95,8 @@ Action<string> SourceLink = (solutionFileName) =>
 {
     try 
     {
-        GitLink("./", new GitLinkSettings() {
-            RepositoryUrl = "https://github.com/wojtst/NugetTestProject",
-            SolutionFileName = solutionFileName,
-            Configuration = configuration,
+        GitLink3($"./src/TestClassLibrary/bin/{configuration}/TestClassLibrary.pdb", new GitLink3Settings() {
+            RepositoryUrl = "https://github.com/wojtst/NugetTestProject"
         });
     }
     catch (Exception ex)
@@ -138,8 +136,8 @@ Task("Nuget")
     {
 
             Information($"Publishing \"{package}\".");
-            //CopyFile(package, "D:\\LocalNugetRepository\\" + package.GetFilename());
-            NuGetPush(package, settings); 
+            CopyFile(package, "D:\\LocalNugetRepository\\" + package.GetFilename());
+            //NuGetPush(package, settings); 
     } 
 });
 // Task("Run-Unit-Tests")

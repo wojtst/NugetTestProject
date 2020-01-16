@@ -9,6 +9,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>asd</description>
     <summary>...</summary>
+    <projectUrl>https://github.com/wojtst/NugetTestProject</projectUrl>
     <releaseNotes>...</releaseNotes>
   </metadata>
   <files>
