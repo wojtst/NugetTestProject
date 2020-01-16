@@ -6,3 +6,4 @@
 /src/TestClassLibrary/bin/*
 /src/TestClassLibrary/.vs/*
 artifacts/*
+src/packages/*
