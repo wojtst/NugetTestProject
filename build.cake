@@ -59,7 +59,15 @@ Task("Build")
 
         var solution = System.IO.Path.Combine("./src/", "TestClassLibrary.sln");
         // Use MSBuild
-        MSBuild(solution, settings => settings.SetConfiguration(configuration));
+        // MSBuild(solution, settings =>
+        // { 
+        //     settings.SetConfiguration(configuration);
+        // });
+
+        MSBuild(solution, new MSBuildSettings()
+        {
+            Configuration = configuration
+        }.WithProperty("Optimized", "false"));
         
         SourceLink(solution);
 
@@ -136,8 +144,8 @@ Task("Nuget")
     {
 
             Information($"Publishing \"{package}\".");
-            CopyFile(package, "D:\\LocalNugetRepository\\" + package.GetFilename());
-            //NuGetPush(package, settings); 
+            //CopyFile(package, "D:\\LocalNugetRepository\\" + package.GetFilename());
+            NuGetPush(package, settings); 
     } 
 });
 // Task("Run-Unit-Tests")
